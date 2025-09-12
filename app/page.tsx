@@ -47,9 +47,6 @@ export default function HomePage() {
   const heroImages = [
     "/modern-computer-lab.png",
     "/university-building-blue-sky.png",
-    "/placeholder-0gjyc.png",
-    "/placeholder-z1xla.png",
-    "/placeholder-40pqe.png",
   ]
 
   return (
@@ -74,7 +71,7 @@ export default function HomePage() {
                     <img
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full h-full object-cover scale-105 transition-transform duration-[6000ms] ease-out"
+                      className="w-full h-full min-h-screen lg:object-cover scale-105 transition-transform duration-[6000ms] ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -139,7 +136,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 ">
           <div className="animate-bounce">
             <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
