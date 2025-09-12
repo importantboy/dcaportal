@@ -53,15 +53,16 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-background">
       {/* Hero Section with Image Carousel */}
-      <section className="relative bg-blue-900 text-white py-20 overflow-hidden min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]">
+      <section className="relative overflow-hidden h-screen">
+        {/* Background Carousel */}
         <div className="absolute inset-0 z-0">
           <Carousel
             className="w-full h-full"
             plugins={[
               Autoplay({
-                delay: 5000,
+                delay: 6000,
                 stopOnInteraction: false,
               }),
             ]}
@@ -73,9 +74,10 @@ export default function HomePage() {
                     <img
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover scale-105 transition-transform duration-[6000ms] ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   </div>
                 </CarouselItem>
               ))}
@@ -83,51 +85,106 @@ export default function HomePage() {
           </Carousel>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-          <div className="text-center w-full">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance leading-tight">{department.name}</h1>
-            <p className="text-xl md:text-2xl text-blue-200 mb-8 text-balance">{department.college}</p>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8 text-pretty px-4">
-              Fostering innovation and excellence in computer applications since {department.established}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
-                <Link href="/courses">Explore Courses</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-blue-300 text-blue-100 hover:bg-blue-800 bg-transparent w-full sm:w-auto"
-              >
-                <Link href="/faculty">Meet Faculty</Link>
-              </Button>
+        {/* Hero Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="text-center">
+              <div className="opacity-0 animate-fade-in-up mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
+                  <Award className="h-4 w-4 mr-2" />
+                  Established {department.established} • {department.totalStudents}+ Students
+                </div>
+              </div>
+
+              <h1 className="opacity-0 animate-fade-in-up animation-delay-200 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 text-balance leading-[0.9] tracking-tight">
+                Empowering Future
+                <span className="block bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
+                  Innovators
+                </span>
+              </h1>
+
+              <p className="opacity-0 animate-fade-in-up animation-delay-400 text-xl sm:text-2xl md:text-3xl text-white/90 mb-4 text-balance font-light">
+                {department.name}
+              </p>
+
+              <p className="opacity-0 animate-fade-in-up animation-delay-400 text-lg sm:text-xl text-white/80 mb-12 text-balance max-w-3xl mx-auto font-light leading-relaxed">
+                Shaping tomorrow's technology leaders through innovative education, cutting-edge research, and industry
+                partnerships at {department.college}
+              </p>
+
+              <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold rounded-full shadow-2xl hover:shadow-accent/25 transition-all duration-300 hover:scale-105 border-0"
+                >
+                  <Link href="/courses" className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5" />
+                    Explore Programs
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/30 text-white hover:bg-white hover:text-primary bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                >
+                  <Link href="/contact" className="flex items-center gap-2">
+                    <Users className="h-5 w-5" />
+                    Join Our Community
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-card relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-balance">Excellence in Numbers</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+              Our achievements reflect our commitment to academic excellence and innovation
+            </p>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{department.totalStudents}+</div>
-              <div className="text-gray-600">Students</div>
+              <div className="text-5xl md:text-6xl font-black text-accent mb-4 hover:scale-110 transition-transform duration-300">
+                {department.totalStudents}+
+              </div>
+              <div className="text-lg font-semibold text-primary">Active Students</div>
+              <div className="text-muted-foreground">Pursuing Excellence</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{department.facultyCount}</div>
-              <div className="text-gray-600">Faculty Members</div>
+              <div className="text-5xl md:text-6xl font-black text-secondary mb-4 hover:scale-110 transition-transform duration-300">
+                {department.facultyCount}
+              </div>
+              <div className="text-lg font-semibold text-primary">Expert Faculty</div>
+              <div className="text-muted-foreground">Industry Leaders</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{department.labsCount}</div>
-              <div className="text-gray-600">Computer Labs</div>
+              <div className="text-5xl md:text-6xl font-black text-accent mb-4 hover:scale-110 transition-transform duration-300">
+                {department.labsCount}
+              </div>
+              <div className="text-lg font-semibold text-primary">Modern Labs</div>
+              <div className="text-muted-foreground">State-of-the-art</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">
+              <div className="text-5xl md:text-6xl font-black text-secondary mb-4 hover:scale-110 transition-transform duration-300">
                 {new Date().getFullYear() - Number.parseInt(department.established)}+
               </div>
-              <div className="text-gray-600">Years of Excellence</div>
+              <div className="text-lg font-semibold text-primary">Years Legacy</div>
+              <div className="text-muted-foreground">Of Excellence</div>
             </div>
           </div>
         </div>
