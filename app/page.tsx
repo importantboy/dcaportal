@@ -9,6 +9,7 @@ import { Users, BookOpen, Calendar, Award, Eye, Target, History } from "lucide-r
 import Link from "next/link"
 import { fetchPortalData, type PortalData } from "@/lib/data"
 import Autoplay from "embla-carousel-autoplay"
+import Image from "next/image"
 
 export default function HomePage() {
   const [data, setData] = useState<PortalData | null>(null)
@@ -54,24 +55,31 @@ export default function HomePage() {
       {/* Hero Section with Image Carousel */}
       <section className="relative overflow-hidden h-screen">
         {/* Background Carousel */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 ">
           <Carousel
             className="w-full h-full"
             plugins={[
+            
               Autoplay({
                 delay: 6000,
                 stopOnInteraction: false,
               }),
             ]}
+            
           >
             <CarouselContent className="h-full">
               {heroImages.map((image, index) => (
-                <CarouselItem key={index} className="h-full">
-                  <div className="relative h-full">
-                    <img
+                <CarouselItem key={index} className="h-full" >
+                  <div className="relative h-full min-w-screen">
+                    <Image
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full h-full min-h-screen lg:object-cover scale-105 transition-transform duration-[6000ms] ease-out"
+                      className="w-full h-full min-h-screen object-cover lg:object-contain transition-transform duration-[6000ms] ease-out"
+                      width={'100'}
+                      height={'100'}
+                      // fill
+                      objectFit="cover"
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -86,7 +94,7 @@ export default function HomePage() {
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-center">
-              <div className="opacity-0 animate-fade-in-up mb-6">
+              <div className="opacity-0 animate-fade-in-up mb-6 ">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
                   <Award className="h-4 w-4 mr-2" />
                   Established {department.established} • {department.totalStudents}+ Students
@@ -102,11 +110,6 @@ export default function HomePage() {
 
               <p className="opacity-0 animate-fade-in-up animation-delay-400 text-xl sm:text-2xl md:text-3xl text-white/90 mb-4 text-balance font-light">
                 {department.name}
-              </p>
-
-              <p className="opacity-0 animate-fade-in-up animation-delay-400 text-lg sm:text-xl text-white/80 mb-12 text-balance max-w-3xl mx-auto font-light leading-relaxed">
-                Shaping tomorrow's technology leaders through innovative education, cutting-edge research, and industry
-                partnerships at {department.college}
               </p>
 
               <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
@@ -136,7 +139,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 ">
+
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 ">
           <div className="animate-bounce">
             <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
               <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
