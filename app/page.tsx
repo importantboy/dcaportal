@@ -125,7 +125,7 @@ export default function HomePage() {
                     <BookOpen className="h-5 w-5" />
                     Explore Programs
                   </Link>
-                </Button>
+                </Button> 
                 <Button
                   asChild
                   variant="outline"
