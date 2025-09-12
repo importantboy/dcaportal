@@ -61,6 +61,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0 ">
           <Carousel
             className="w-full h-full"
+            opts={{loop : true}}
             plugins={[
             
               Autoplay({
