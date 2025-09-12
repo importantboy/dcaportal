@@ -46,6 +46,9 @@ export default function HomePage() {
   const { department, notices, events } = data
 
   const heroImages = [
+    "/pexels-ron-lach-10638075.jpg",
+    "/pexels-joshsorenson-1714208.jpg",
+    "/engineer-8499958.jpg",
     "/modern-computer-lab.png",
     "/university-building-blue-sky.png",
   ]
