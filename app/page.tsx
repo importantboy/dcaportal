@@ -67,6 +67,7 @@ export default function HomePage() {
               Autoplay({
                 delay: 2000,
                 stopOnInteraction: false,
+                 
               }),
             ]}
             
