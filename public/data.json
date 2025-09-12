@@ -1,0 +1,331 @@
+{
+  "department": {
+    "name": "Department of Computer Application",
+    "college": "SVIET - Swami Vivekanand Institute of Engineering & Technology",
+    "vision": "To be a leading department in computer applications, fostering innovation, research excellence, and producing skilled professionals who contribute to technological advancement and societal development.",
+    "mission": "To provide quality education in computer applications through innovative teaching methodologies, industry collaboration, and research activities while nurturing ethical values and leadership qualities in students.",
+    "history": "Established in 2010, the Department of Computer Application has been at the forefront of computer education and research. With state-of-the-art laboratories and experienced faculty, we have successfully graduated over 1000 students who are now working in leading IT companies worldwide.",
+    "established": "2010",
+    "totalStudents": 450,
+    "facultyCount": 18,
+    "labsCount": 6
+  },
+  "courses": [
+    {
+      "id": 1,
+      "name": "Bachelor of Computer Applications (BCA)",
+      "duration": "3 Years",
+      "eligibility": "10+2 with Mathematics",
+      "intake": 60,
+      "description": "A comprehensive undergraduate program covering programming, software development, database management, and web technologies.",
+      "syllabus": [
+        {
+          "semester": 1,
+          "subjects": [
+            "Programming Fundamentals",
+            "Mathematics-I",
+            "Digital Electronics",
+            "Computer Organization",
+            "English Communication"
+          ]
+        },
+        {
+          "semester": 2,
+          "subjects": [
+            "Data Structures",
+            "Mathematics-II",
+            "Database Management",
+            "Web Technologies",
+            "Environmental Studies"
+          ]
+        },
+        {
+          "semester": 3,
+          "subjects": [
+            "Object Oriented Programming",
+            "Operating Systems",
+            "Software Engineering",
+            "Computer Networks",
+            "Statistics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Master of Computer Applications (MCA)",
+      "duration": "2 Years",
+      "eligibility": "BCA/B.Sc.(IT)/B.Tech with Mathematics",
+      "intake": 30,
+      "description": "An advanced postgraduate program focusing on software development, system analysis, and emerging technologies.",
+      "syllabus": [
+        {
+          "semester": 1,
+          "subjects": [
+            "Advanced Programming",
+            "System Analysis & Design",
+            "Computer Architecture",
+            "Mathematical Foundation",
+            "Research Methodology"
+          ]
+        },
+        {
+          "semester": 2,
+          "subjects": [
+            "Advanced Database Systems",
+            "Software Project Management",
+            "Machine Learning",
+            "Mobile Application Development",
+            "Cyber Security"
+          ]
+        }
+      ]
+    }
+  ],
+  "faculty": [
+    {
+      "id": 1,
+      "name": "Dr. Rajesh Kumar",
+      "designation": "Professor & Head of Department",
+      "qualification": "Ph.D. in Computer Science",
+      "specialization": "Machine Learning, Data Mining, Artificial Intelligence",
+      "experience": "15 years",
+      "email": "rajesh.kumar@sviet.ac.in",
+      "phone": "+91-9876543210",
+      "photo": "/placeholder.svg?height=200&width=200"
+    },
+    {
+      "id": 2,
+      "name": "Prof. Priya Sharma",
+      "designation": "Associate Professor",
+      "qualification": "M.Tech in Software Engineering",
+      "specialization": "Software Engineering, Web Development, Database Systems",
+      "experience": "12 years",
+      "email": "priya.sharma@sviet.ac.in",
+      "phone": "+91-9876543211",
+      "photo": "/placeholder.svg?height=200&width=200"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Amit Singh",
+      "designation": "Assistant Professor",
+      "qualification": "Ph.D. in Information Technology",
+      "specialization": "Cyber Security, Network Security, Blockchain",
+      "experience": "8 years",
+      "email": "amit.singh@sviet.ac.in",
+      "phone": "+91-9876543212",
+      "photo": "/placeholder.svg?height=200&width=200"
+    },
+    {
+      "id": 4,
+      "name": "Ms. Neha Gupta",
+      "designation": "Assistant Professor",
+      "qualification": "M.Tech in Computer Applications",
+      "specialization": "Mobile App Development, UI/UX Design, Cloud Computing",
+      "experience": "6 years",
+      "email": "neha.gupta@sviet.ac.in",
+      "phone": "+91-9876543213",
+      "photo": "/placeholder.svg?height=200&width=200"
+    }
+  ],
+  "notices": [
+    {
+      "id": 1,
+      "title": "Semester Examination Schedule Released",
+      "date": "2024-12-15",
+      "content": "The examination schedule for Winter Semester 2024 has been released. Students are advised to check the department notice board and website for detailed timetable.",
+      "priority": "high",
+      "category": "examination"
+    },
+    {
+      "id": 2,
+      "title": "Industry Expert Lecture Series",
+      "date": "2024-12-10",
+      "content": "A series of lectures by industry experts on 'Emerging Technologies in AI and ML' will be conducted from December 20-22, 2024. All students are encouraged to attend.",
+      "priority": "medium",
+      "category": "event"
+    },
+    {
+      "id": 3,
+      "title": "Project Submission Deadline Extended",
+      "date": "2024-12-08",
+      "content": "The deadline for final year project submission has been extended to January 15, 2025. Students must submit both hard copy and soft copy.",
+      "priority": "high",
+      "category": "academic"
+    },
+    {
+      "id": 4,
+      "title": "Library New Book Arrivals",
+      "date": "2024-12-05",
+      "content": "New books on Machine Learning, Cloud Computing, and Cyber Security have arrived in the department library. Students can issue these books from tomorrow.",
+      "priority": "low",
+      "category": "library"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "TechFest 2024",
+      "date": "2024-12-20",
+      "description": "Annual technical festival featuring coding competitions, project exhibitions, and tech talks by industry experts.",
+      "venue": "Main Auditorium, SVIET",
+      "time": "9:00 AM - 6:00 PM",
+      "images": [
+        "/placeholder.svg?height=300&width=400",
+        "/placeholder.svg?height=300&width=400",
+        "/placeholder.svg?height=300&width=400"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hackathon 2024",
+      "date": "2024-11-15",
+      "description": "24-hour coding marathon where students developed innovative solutions for real-world problems.",
+      "venue": "Computer Lab Block",
+      "time": "24 Hours",
+      "images": ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"]
+    },
+    {
+      "id": 3,
+      "title": "Industry Visit to Tech Mahindra",
+      "date": "2024-10-25",
+      "description": "Educational visit to Tech Mahindra office where students learned about industry practices and career opportunities.",
+      "venue": "Tech Mahindra, Chandigarh",
+      "time": "Full Day",
+      "images": ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"]
+    }
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "title": "Data Structures Assignment - Binary Trees",
+      "course": "BCA Semester 3",
+      "subject": "Data Structures",
+      "dueDate": "2024-12-25",
+      "description": "Implementation of binary tree operations including insertion, deletion, and traversal algorithms.",
+      "downloadUrl": "#",
+      "submissionFormat": "PDF + Source Code"
+    },
+    {
+      "id": 2,
+      "title": "Database Project - Library Management System",
+      "course": "MCA Semester 1",
+      "subject": "Advanced Database Systems",
+      "dueDate": "2024-12-30",
+      "description": "Design and implement a complete library management system using MySQL and PHP/Python.",
+      "downloadUrl": "#",
+      "submissionFormat": "Complete Project Files"
+    },
+    {
+      "id": 3,
+      "title": "Web Development Assignment - E-commerce Site",
+      "course": "BCA Semester 4",
+      "subject": "Web Technologies",
+      "dueDate": "2025-01-10",
+      "description": "Create a responsive e-commerce website using HTML, CSS, JavaScript, and Bootstrap.",
+      "downloadUrl": "#",
+      "submissionFormat": "ZIP File with Source Code"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "AI-Based Student Performance Prediction System",
+      "students": ["Rahul Sharma", "Priya Patel"],
+      "guide": "Dr. Rajesh Kumar",
+      "year": "2024",
+      "description": "Machine learning model to predict student performance based on various academic and behavioral parameters.",
+      "downloadUrl": "#",
+      "status": "Completed"
+    },
+    {
+      "id": 2,
+      "title": "Blockchain-Based Voting System",
+      "students": ["Amit Kumar", "Sneha Singh"],
+      "guide": "Dr. Amit Singh",
+      "year": "2024",
+      "description": "Secure and transparent voting system using blockchain technology to ensure election integrity.",
+      "downloadUrl": "#",
+      "status": "In Progress"
+    }
+  ],
+  "library": {
+    "books": [
+      {
+        "id": 1,
+        "title": "Introduction to Algorithms",
+        "author": "Thomas H. Cormen",
+        "isbn": "978-0262033848",
+        "category": "Algorithms",
+        "availability": "Available",
+        "copies": 5
+      },
+      {
+        "id": 2,
+        "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+        "author": "Robert C. Martin",
+        "isbn": "978-0132350884",
+        "category": "Software Engineering",
+        "availability": "Available",
+        "copies": 3
+      },
+      {
+        "id": 3,
+        "title": "Machine Learning Yearning",
+        "author": "Andrew Ng",
+        "isbn": "978-0999579909",
+        "category": "Machine Learning",
+        "availability": "Issued",
+        "copies": 2
+      }
+    ],
+    "ebooks": [
+      {
+        "id": 1,
+        "title": "Python Programming for Beginners",
+        "author": "John Smith",
+        "category": "Programming",
+        "downloadUrl": "#",
+        "format": "PDF"
+      },
+      {
+        "id": 2,
+        "title": "Web Development with React",
+        "author": "Jane Doe",
+        "category": "Web Development",
+        "downloadUrl": "#",
+        "format": "PDF"
+      }
+    ],
+    "journals": [
+      {
+        "id": 1,
+        "title": "IEEE Transactions on Computers",
+        "publisher": "IEEE",
+        "category": "Computer Science",
+        "accessUrl": "#",
+        "subscription": "Active"
+      },
+      {
+        "id": 2,
+        "title": "ACM Computing Surveys",
+        "publisher": "ACM",
+        "category": "Computing",
+        "accessUrl": "#",
+        "subscription": "Active"
+      }
+    ]
+  },
+  "contact": {
+    "address": "Department of Computer Application, SVIET, Ramnagar, Banur, Punjab 140601",
+    "phone": "+91-1762-507000",
+    "email": "dca@sviet.ac.in",
+    "office_hours": "Monday to Friday: 9:00 AM - 5:00 PM",
+    "hod_email": "hod.dca@sviet.ac.in",
+    "coordinates": {
+      "lat": 30.5595,
+      "lng": 76.8711
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.0123456789!2d76.8711!3d30.5595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDMzJzM0LjIiTiA3NsKwNTInMTYuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+  }
+}
