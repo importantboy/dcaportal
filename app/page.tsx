@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Users, BookOpen, Calendar, Award, Eye, Target, History } from "lucide-react"
 import Link from "next/link"
 import { fetchPortalData, type PortalData } from "@/lib/data"
+import Autoplay from "embla-carousel-autoplay"
 
 export default function HomePage() {
   const [data, setData] = useState<PortalData | null>(null)
@@ -42,26 +44,61 @@ export default function HomePage() {
 
   const { department, notices, events } = data
 
+  const heroImages = [
+    "/modern-computer-lab.png",
+    "/university-building-blue-sky.png",
+    "/placeholder-0gjyc.png",
+    "/placeholder-z1xla.png",
+    "/placeholder-40pqe.png",
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">{department.name}</h1>
+      {/* Hero Section with Image Carousel */}
+      <section className="relative bg-blue-900 text-white py-20 overflow-hidden min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh]">
+        <div className="absolute inset-0 z-0">
+          <Carousel
+            className="w-full h-full"
+            plugins={[
+              Autoplay({
+                delay: 5000,
+                stopOnInteraction: false,
+              }),
+            ]}
+          >
+            <CarouselContent className="h-full">
+              {heroImages.map((image, index) => (
+                <CarouselItem key={index} className="h-full">
+                  <div className="relative h-full">
+                    <img
+                      src={image || "/placeholder.svg"}
+                      alt={`Campus image ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="text-center w-full">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance leading-tight">{department.name}</h1>
             <p className="text-xl md:text-2xl text-blue-200 mb-8 text-balance">{department.college}</p>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8 text-pretty">
+            <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8 text-pretty px-4">
               Fostering innovation and excellence in computer applications since {department.established}
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
                 <Link href="/courses">Explore Courses</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-blue-300 text-blue-100 hover:bg-blue-800 bg-transparent"
+                className="border-blue-300 text-blue-100 hover:bg-blue-800 bg-transparent w-full sm:w-auto"
               >
                 <Link href="/faculty">Meet Faculty</Link>
               </Button>
@@ -194,9 +231,9 @@ export default function HomePage() {
             {/* Recent Notices */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>Recent Notices</span>
-                  <Button asChild variant="outline" size="sm">
+                <CardTitle className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span className="text-lg sm:text-xl">Recent Notices</span>
+                  <Button asChild variant="outline" size="sm" className="w-full sm:w-auto bg-transparent">
                     <Link href="/notices">View All</Link>
                   </Button>
                 </CardTitle>
@@ -205,7 +242,7 @@ export default function HomePage() {
                 <div className="space-y-4">
                   {notices.slice(0, 3).map((notice) => (
                     <div key={notice.id} className="border-l-4 border-l-blue-500 pl-4">
-                      <div className="flex items-start justify-between gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
                         <h4 className="font-semibold text-sm text-balance">{notice.title}</h4>
                         <Badge
                           variant={
@@ -215,6 +252,7 @@ export default function HomePage() {
                                 ? "default"
                                 : "secondary"
                           }
+                          className="w-fit"
                         >
                           {notice.priority}
                         </Badge>
@@ -230,9 +268,9 @@ export default function HomePage() {
             {/* Recent Events */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>Upcoming Events</span>
-                  <Button asChild variant="outline" size="sm">
+                <CardTitle className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span className="text-lg sm:text-xl">Upcoming Events</span>
+                  <Button asChild variant="outline" size="sm" className="w-full sm:w-auto bg-transparent">
                     <Link href="/events">View All</Link>
                   </Button>
                 </CardTitle>
