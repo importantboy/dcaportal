@@ -75,13 +75,12 @@ export default function HomePage() {
             <CarouselContent className="h-full">
               {heroImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full" >
-                  <div className="relative h-full min-w-screen">
+                  <div className="relative h-screen min-w-screen">
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full  min-h-screen object-cover "
-                      width={'10'}
-                      height={'10'}
+                      className="object-cover"
+                        fill
                       // objectFit="cover"
                       // fill
                     />
