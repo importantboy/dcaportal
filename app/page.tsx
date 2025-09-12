@@ -46,10 +46,10 @@ export default function HomePage() {
   const { department, notices, events } = data
 
   const heroImages = [
-    "/pexels-ron-lach-10638075.jpg",
-    "/pexels-joshsorenson-1714208.jpg",
-    "/engineer-8499958.jpg",
-    "/modern-computer-lab.png",
+    "/pexels-ron-lach-10638075-min.jpg",
+    "/pexels-joshsorenson-1714208-min.jpg",
+    "/engineer-8499958-min.jpg",
+    "/modern-computer-lab-min.png",
     "/university-building-blue-sky.png",
   ]
 
@@ -65,14 +65,13 @@ export default function HomePage() {
             plugins={[
             
               Autoplay({
-                delay: 2000,
+                delay: 4000,
                 stopOnInteraction: false,
-                 
               }),
             ]}
             
           >
-            <CarouselContent className="h-full">
+            <CarouselContent className="h-full" style={{ willChange: 'transform' }}>
               {heroImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full" >
                   <div className="relative h-screen min-w-screen">
@@ -80,9 +79,10 @@ export default function HomePage() {
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
                       className="object-cover"
-                        fill
+                        // fill
                       // objectFit="cover"
-                      // fill
+                      fill
+                      priority = {index == 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
