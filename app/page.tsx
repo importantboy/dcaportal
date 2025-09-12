@@ -65,7 +65,7 @@ export default function HomePage() {
             plugins={[
             
               Autoplay({
-                delay: 6000,
+                delay: 2000,
                 stopOnInteraction: false,
               }),
             ]}
@@ -78,12 +78,11 @@ export default function HomePage() {
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full h-full min-h-screen object-cover lg:object-contain transition-transform duration-[6000ms] ease-out"
-                      width={'100'}
-                      height={'100'}
+                      className="w-full  min-h-screen object-cover "
+                      width={'10'}
+                      height={'10'}
+                      // objectFit="cover"
                       // fill
-                      objectFit="cover"
-                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
