@@ -46,7 +46,10 @@ export default function HomePage() {
   const { department, notices, events } = data
 
   const heroImages = [
-    "/modern-computer-lab.png",
+    "/pexels-ron-lach-10638075-min.jpg",
+    "/pexels-joshsorenson-1714208-min.jpg",
+    "/engineer-8499958-min.jpg",
+    "/modern-computer-lab-min.png",
     "/university-building-blue-sky.png",
   ]
 
@@ -58,28 +61,28 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0 ">
           <Carousel
             className="w-full h-full"
+            opts={{loop : true}}
             plugins={[
             
               Autoplay({
-                delay: 6000,
+                delay: 4000,
                 stopOnInteraction: false,
               }),
             ]}
             
           >
-            <CarouselContent className="h-full">
+            <CarouselContent className="h-full" style={{ willChange: 'transform' }}>
               {heroImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full" >
-                  <div className="relative h-full min-w-screen">
+                  <div className="relative h-screen min-w-screen">
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={`Campus image ${index + 1}`}
-                      className="w-full h-full min-h-screen object-cover lg:object-contain transition-transform duration-[6000ms] ease-out"
-                      width={'100'}
-                      height={'100'}
-                      // fill
-                      objectFit="cover"
-                      priority
+                      className="object-cover"
+                        // fill
+                      // objectFit="cover"
+                      fill
+                      priority = {index == 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -122,7 +125,7 @@ export default function HomePage() {
                     <BookOpen className="h-5 w-5" />
                     Explore Programs
                   </Link>
-                </Button>
+                </Button> 
                 <Button
                   asChild
                   variant="outline"
